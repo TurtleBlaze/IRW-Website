@@ -1,0 +1,321 @@
+@import "/prefixes.styl"
+
+easeInOutQuint = cubic-bezier(0.860, 0.000, 0.070, 1.000)
+
+bgColor = #191825
+buttonColor = #4D4DBD
+buttonHighlight = #7C7CE0
+
+body
+  color white
+  background-color #1e5f91
+  font-family 'Source Sans Pro', sans-serif
+h1,h2,h3,h4,h5
+  font-weight 900
+  text-transform uppercase
+li
+  list-style-type disc
+  font-size 1.7rem
+
+.button
+  padding 10px 20px
+  color white
+  margin-bottom 15px
+  text-align center
+  background-color buttonColor
+  text-decoration none
+  cursor pointer
+  border-radius 10px
+  display inline-block
+  font-size 2rem
+  text-transform uppercase
+  font-weight 900
+  &:hover
+    background-color buttonHighlight
+    color white
+
+// -------------------
+
+#social
+  position fixed
+  right 30px
+  top 30px
+  z-index 50
+  a
+    text-decoration none
+    color white
+    font-size 5rem
+    text-shadow 3px 3px 0px rgba(0, 0, 0, 1)
+    display block
+    margin-top -15px
+  .icon-twitter
+    color #00aced
+  .icon-youtube
+    color #e52d27
+
+@media (max-width: 550px)
+  #social
+    top 100px
+
+// -------------------
+
+#top-bar
+  width 100%
+  height 100px
+  position fixed
+  z-index 50
+  top 0
+  overflow hidden
+  .background
+    width 100%
+    height 100%
+    margin 0 auto
+    background-size 960px 100%
+    background-position center
+    background-repeat no-repeat
+    background-image url('../images/topBar.png')
+  .content
+    padding 25px 0
+    text-align center
+    font-size 2rem
+    a
+      text-decoration none
+      color white
+      text-transform uppercase
+      font-weight 900
+
+// -------------------
+
+#loader
+  width 100%
+  height 100%
+  position fixed
+  background-color bgColor
+  z-index 100
+  transition opacity 2s ease
+  text-align center
+  padding 25% 0
+  .spinner-container
+    transform scale(0)
+    transition transform 0.3s ease
+  .spinner-container-active
+    transform scale(1)
+  .spinner
+    animation spin 0.3s linear infinite
+    animation-play-state running
+    display block
+    font-size 3rem
+
+
+// -------------------
+
+#spaceBG
+  position absolute
+  z-index -10
+  width 100%
+  height 150%
+  background-image url('../images/spaceBGpng.png')
+  background-size cover
+  background-position center
+  overflow hidden
+  top 230px
+  .planet
+    position absolute
+    &:nth-of-type(1)
+      top 500px
+    &:nth-of-type(2)
+      top 700px
+      right 200px
+      z-index -1
+
+// -------------------
+
+#header
+  width 100%
+  height 100vh
+  text-align center
+  position relative
+  #headerArt
+    width 100%
+    height 110%
+    top -10%
+    position absolute
+    background-image url('../images/headerArt2.jpg')
+    background-color black
+    background-size cover
+    background-position center
+    z-index 0
+  .logo
+    margin-top 50px
+    position relative
+    z-index 1
+
+@media (min-width: 550px)
+  .logo
+    margin-top -100px !important
+
+.header-divider
+  background-image url('../images/headerDivider.png')
+  background-size cover
+  background-position center
+  text-align center
+  width 100%
+  height 250px
+  position absolute
+  z-index 1
+  bottom 0
+  .rubble
+    position absolute
+    bottom 0
+    width 400px
+    height 72px
+    background-image url('../images/rubble.png')
+    &:nth-of-type(1)
+      left 0
+    &:nth-of-type(2)
+      right 0
+
+// -------------------
+
+#trailer
+  padding 50px 0 50px 0
+  background-color bgColor
+  text-align center
+  position relative
+  z-index 1
+  iframe
+    width 100%
+    margin 50px 0 0 -4%
+  .outnow
+    text-align left
+    margin-top 50px
+  img
+    padding 50px 50px 0 50px
+
+
+// -------------------
+
+#screenshots
+  padding 250px 0 100px
+  position relative
+  text-shadow 3px 3px 0px rgba(0, 0, 0, 1)
+  img, video
+    border 3px solid white
+    width 100%
+    border-radius 5px
+    box-shadow 0px 0px 90px 0px rgba(255,204,0,0.6)
+  hr
+    opacity 0
+  p
+    font-size 1.8rem
+  .columns
+    padding 10px
+    height 300px
+  .universe-divider
+    background-image url('../images/universeDivider.png')
+    background-size cover
+    background-position center
+    text-align center
+    width 100%
+    height 150px
+    position absolute
+    top 0
+
+// -------------------
+
+#garage
+  padding 400px 0
+  position relative
+  background-color bgColor
+  background-image url('../images/garagebg.png')
+  background-repeat repeat
+  text-shadow 3px 3px 0px rgba(0, 0, 0, 1)
+  p
+    font-size 1.7rem
+  img
+    border 4px solid white
+    width 100%
+    &:nth-of-type(1)
+      transform rotateZ(-3deg)
+    &:nth-of-type(2)
+      transform rotateZ(1deg) translateX(-10px)
+  .steam
+    transform translateX(0) rotateZ(0) !important
+    border none !important
+    padding 15px 30px
+  .garage-divider
+    width 100%
+    height 336px
+    background-image url('../images/garageDivider.png')
+    background-repeat repeat-x
+    position absolute
+    top -50px
+  .car-parent
+    position absolute
+    top -57px
+    left -456px
+  .bot-parent
+    position absolute
+    top 600px
+    left 300px
+  .moving-car
+    width 456px
+    height 122px
+    background-image url('../images/spritesheets/car.png')
+  .moving-bot
+    width 160px
+    height 150px
+    background-image url('../images/spritesheets/bot.png')
+
+// -------------------
+
+#footer
+  padding 200px 0
+  background-image url('../images/screenshots/lava.jpg')
+  background-size cover
+  position relative
+  text-align center
+  text-shadow 3px 3px 0px rgba(0, 0, 0, 1)
+  .links
+    margin-top 100px
+    a
+      text-decoration none
+      display inline-block
+      padding 10px 20px
+      border-radius 10px
+      background-color buttonColor
+      color white
+      margin 10px
+      &:hover
+        background-color buttonHighlight
+        color white
+  .footer-divider
+    width 100%
+    height 374px
+    background-image url('../images/tube.png')
+    background-repeat repeat-x
+    position absolute
+    top -250px
+  .details
+    text-align center
+  img
+    background-color white
+    padding 30px
+    border-radius 200px
+    width 200px
+  p
+    font-size 2rem
+  a
+    font-size 3rem
+    display block
+
+// -------------------
+
+@keyframes spin {
+0% {
+transform: rotateZ(0deg)
+}
+100% {
+transform: rotateZ(360deg)
+}
+}
