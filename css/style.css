@@ -46,11 +46,18 @@ li {
   display: block;
   margin-top: -15px;
 }
-#social .icon-twitter {
-  color: #00aced;
+#social img {
+  height: 50px;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
-#social .icon-youtube {
-  color: #e52d27;
+#social img:hover {
+  -webkit-transform: translateY(-5px) scale(1.1);
+  -moz-transform: translateY(-5px) scale(1.1);
+  -ms-transform: translateY(-5px) scale(1.1);
+  transform: translateY(-5px) scale(1.1);
 }
 @media (max-width: 550px) {
   #social {
