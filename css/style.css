@@ -296,9 +296,15 @@ li {
   position: absolute;
   top: -50px;
 }
+#garage .car-container {
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  overflow: hidden;
+  top: -57px;
+}
 #garage .car-parent {
   position: absolute;
-  top: -57px;
   left: -456px;
 }
 #garage .bot-parent {
