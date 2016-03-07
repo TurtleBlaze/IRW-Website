@@ -1,22 +1,21 @@
 $(document).ready(function() {
+
+//logo
 var time = 0.0;
 var speed = 0.5;
-
 function draw() {
   requestAnimationFrame(draw);
-  // Drawing code goes here
   scroll = scroll - $(document).scrollTop() + 1500;
   time += 0.05;
   $('.logo').css('transform', 'translateY(' + Math.sin(time * speed) * 10 + 'px)');
 }
 draw();
 
+
+//preloader
 $('.spinner-container').toggleClass('spinner-container-active');
-
 $('body').imagesLoaded({ background: true }, function() {
-  // console.log('all images loaded');
   $('#headerArt').imagesLoaded({ background: true }, function() {
-
       setTimeout(function(){
         $("#loader").css('opacity', '0');
         $('.spinner-container').toggleClass('spinner-container-active');
@@ -24,12 +23,11 @@ $('body').imagesLoaded({ background: true }, function() {
       setTimeout(function(){
         $("#loader").css('display', 'none');
       }, 2300);
-
   });
-
-
 });
 
+
+//spritesheets
 $(".moving-car").animateSprite({
     fps: 18,
     animations: {
@@ -47,4 +45,14 @@ $(".moving-bot").animateSprite({
 });
 
 
+//video
+var vidWidth = $('#trailer-frame').width();
+$('#trailer-frame').css('height', vidWidth * 0.5625 + 'px');
+$( window ).resize(function() {
+  vidWidth = $('#trailer-frame').width();
+  $('#trailer-frame').css('height', vidWidth * 0.5625 + 'px');
+});
+
+
+//end
 });
